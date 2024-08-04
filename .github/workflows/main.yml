@@ -34,9 +34,17 @@ jobs:
     - name: Notify failure
       if: failure()
       run: |
-        curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage" \
-        -d "chat_id=$TELEGRAM_CHAT_ID&text=Script failed to run on ${GITHUB_REF##*/} at ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY} - ${GITHUB_SHA}" \
+        curl -s -X POST "https://api.telegram.org/bot6452933470: AAFgl8fVmMsJnrmsGDeCo0Ulia50T03ltuA/sendMessage" \
+             -d "chat_id=5051855172&text=This is a test message"
+        -d "chat_id=5051855172&text=Script failed to run on ${GITHUB_REF##*/} at ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY} - ${GITHUB_SHA}" \
         -d "parse_mode=Markdown"
+      env:
+        TELEGRAM_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TG_USER_ID }}
+    - name: Print Telegram Token and Chat ID
+      run: |
+        echo "TELEGRAM_TOKEN=6452933470: AAFgl8fVmMsJnrmsGDeCo0Ulia50T03ltuA"
+        echo "TELEGRAM_CHAT_ID=5051855172"
       env:
         TELEGRAM_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TG_USER_ID }}
