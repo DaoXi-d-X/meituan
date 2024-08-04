@@ -30,16 +30,14 @@ jobs:
     - name: Run script
       run: |
         python meituan.py  # 替换为你的Python脚本文件名
-
-    - name: Send Telegram Notification
-      if: failure()
-      run: |
-        curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage" \
-            -d "chat_id=$TELEGRAM_CHAT_ID" \
-            -d "text=Script failed to run on ${GITHUB_REF##*/} at ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY} - ${GITHUB_SHA}"
+        
+    - name: Set up Telegram Notification
       env:
         TELEGRAM_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TG_USER_ID }}
+      run: |
+        echo "TELEGRAM_TOKEN=$TELEGRAM_TOKEN"
+        echo "TELEGRAM_CHAT_ID=$TELEGRAM_CHAT_ID"
     - name: Print Telegram Token and Chat ID
       run: |
         echo "TELEGRAM_TOKEN=$TELEGRAM_TOKEN"
