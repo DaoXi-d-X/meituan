@@ -15,7 +15,7 @@ token = "token=AgHGK2-mP-JtLzoy0xjJWHvqbOmIM7I2zfpn2DBXo3MRU-2wskFcpYIt92rinoq1q
 
 TG_BOT_TOKEN = '6452933470: AAFgl8fVmMsJnrmsGDeCo0Ulia50T03ltuA' # 通过 @BotFather 申请获得，示例：1077xxx4424:AAFjv0FcqxxxxxxgEMGfi22B4yh15R5uw
 TG_USER_ID = '5051855172'  # 用户、群组或频道 ID，示例：129xxx206
-TG_API_HOST = 'tgpusher.shybee.cf'  # 这是我自建的推送api反代，国内可以访问
+TG_API_HOST = 'api.telegram.org'  # 使用官方的Telegram API地址
 # TG_API_HOST = 'api.telegram.org'  # 这是官方的推送API地址
 USE_TG = True
 # ⬆️
