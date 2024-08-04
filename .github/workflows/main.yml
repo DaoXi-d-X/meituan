@@ -1,6 +1,9 @@
 name: Run Meituan Script Daily
-
+env:
+  TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+  TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 on:
+
   push:
     branches:
       - main
@@ -39,9 +42,15 @@ jobs:
       run: |
         python meituan.py  # 替换为你的Python脚本文件名
 
-    - name: Notify failure
+    - name: Notify failure via curl
       if: failure()
-      uses: dawidd6/action-telegram@master
+      run: |
+        curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage" \
+        -d "chat_id=$TELEGRAM_CHAT_ID&text=Script failed to run on ${GITHUB_REF##*/} at ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY} - ${GITHUB_SHA}" \
+        -d "parse_mode=Markdown"
+      env:
+        TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       with:
         token: ${{ secrets.TELEGRAM_TOKEN }}
         chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
