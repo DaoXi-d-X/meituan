@@ -11,10 +11,10 @@ import random
 import requests
 
 # 使用脚本需要修改的部分 ⬇️
-token = "AgHUG27lbTOQ3oBaOJDQwMjnwomgrPJOmTvdtK2oPW9Z9lpYmzcRqH9fXsa0MkAKeidsRy5bBr3XMwAAAAAwFwAAlJXEDxpndVXtNCtSTBHddr4Y-mgpTFw6P5xKfTkMJXGArLUcCMxhhG82SQzu7D_Z"
+token = "token=AgHGK2-mP-JtLzoy0xjJWHvqbOmIM7I2zfpn2DBXo3MRU-2wskFcpYIt92rinoq1qYt6JiQdvgfStRIAAAABIgAACb-Oun_jBSks7c6Mvwy_BfvcZYcW9tcNydmJ6u9bINwc_MIfvDMaBZl_fYDfkf6hWq0Oj5FHJ-feLe5-gmpyJQ"
 
-TG_BOT_TOKEN = '5726024973:AAFX9c4LKlZkgs5APMt1Zz-RYq0-SixrsT8' # 通过 @BotFather 申请获得，示例：1077xxx4424:AAFjv0FcqxxxxxxgEMGfi22B4yh15R5uw
-TG_USER_ID = '1834204010'  # 用户、群组或频道 ID，示例：129xxx206
+TG_BOT_TOKEN = '6452933470: AAFgl8fVmMsJnrmsGDeCo0Ulia50T03ltuA' # 通过 @BotFather 申请获得，示例：1077xxx4424:AAFjv0FcqxxxxxxgEMGfi22B4yh15R5uw
+TG_USER_ID = '5051855172'  # 用户、群组或频道 ID，示例：129xxx206
 TG_API_HOST = 'tgpusher.shybee.cf'  # 这是我自建的推送api反代，国内可以访问
 # TG_API_HOST = 'api.telegram.org'  # 这是官方的推送API地址
 USE_TG = True
