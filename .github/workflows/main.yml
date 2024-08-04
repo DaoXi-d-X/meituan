@@ -1,6 +1,9 @@
 name: Run Meituan Script Daily
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     # 配置CRON表达式，设置定时任务运行时间
     # 例如：每天0点运行，'0 0 * * *'
